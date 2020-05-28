@@ -1,12 +1,11 @@
 
 
 /*A guitar "effects" pedal that pleads for mercy and then screams in pain when you play through it
- * 
- * TODO
- * 
- * change button to RMS guitar measurement and determine threshold (hopefully just a matter of plugging in)
- * maybe get some better samples for the pleading
- * 
+ * Built using the excellent teensy audio library with its audio system design tool: https://www.pjrc.com/teensy/gui/
+ * Detects when a guitar (connected to the line input (I know the input impedance isn't right for this but it 
+ * is not a real instrument really is it)) is playing, and then loops a sample of a man screaming.
+ * When silence is detected, the pedal randomly plays one of a few audio samples pleading with the guitarist not 
+ * to play. No I'm not sure why I made this either
  */
 
 // screaming
@@ -26,6 +25,7 @@
 
 #define delayFix 5 //number of milliseconds early next sample is played. accounts for delay in playing a sound. Should be small 
 #define pleadRarity 200 // 6/ this number is the probability of saying one of the sad samples per tick
+#define sufferThreshold 0.002 //threshold for detection of guitar input
 
 #include <elapsedMillis.h>
 
@@ -122,7 +122,7 @@ void loop() {
     Serial.print(" ");
     Serial.println(rmsVal, 5);
 
-    if(rmsVal > 0.002){ //pin for output testing. Will use for seeding random pleas later
+    if(rmsVal > sufferThreshold){ //if input detected
       makeNoise = 1;  
     }
     else{
