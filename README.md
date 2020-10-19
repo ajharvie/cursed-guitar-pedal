@@ -1,6 +1,8 @@
 A guitar pedal capable of experiencing suffering. Based on the teensy 3.2 using the teensy audio shield and associated library.
 
-Demonstration here: https://youtu.be/ZZ_g-Q2O5SM
+Original demonstration here: https://youtu.be/ZZ_g-Q2O5SM
+
+Now also beautifully demonstrated by Scott Evans (thanks Scott!): https://www.instagram.com/p/CGaWy1Apvzq/
 
 When it detects silence on the teensy audio input (default threshold sufferThreshold = 0.002) it will plead for you not to play. When you do it will scream horribly, until you stop playing again. It works by looping with three samples: an "attack", which plays when the guitar is first detected, then a "sustain", which loops indefinitely while the guitar is being played (or just abused) and a "decay" which plays once when you stop playing to make it sound more natural.
 
