@@ -1,4 +1,4 @@
-You've heard the "wah" now get ready for the "**AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA**"
+You've heard of "wah" pedals - now get ready for the "**AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA**" pedal
 
 A guitar pedal capable of experiencing suffering. Based on the teensy 3.2 using the teensy audio shield and associated library.
 
